@@ -1,0 +1,5 @@
+stepdefs/registstepdefs.class
+RegistrationPage/regisPage.class
+TestRunner.class
+stepdefs/Propstepdef.class
+RegistrationPage/PropPageObject.class
