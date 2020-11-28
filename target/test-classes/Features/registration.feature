@@ -1,25 +1,19 @@
 Feature: Registration
 
-  Scenario Outline: Valid Registration
-    Given I navigate to propertyrete website
-    #And I click on hello sign in
+  Scenario: Valid Registration
+    Given I navigate to propertyrete website "https://propertyrete.com/"
+    And I click on hello sign in
     And I click on register button
-    When I enter first name "<FirstName>"
-    And I enter last name "<LastName>"
-    And I enter email "<Email>"
-    And I enter phone number "<PhoneNumber>"
-    And I enter password "<Password>"
-    And I enter confirm password "<ConfirmPassword>"
+    When I enter first name "Kubio"
+    And I enter last name "Dougd"
+    And I enter email "kubooD22@gmail.com"
+    And I enter phone number "07934982301"
+    And I enter password "L0nd0n21"
+    And I enter confirm password "L0nd0n21"
     And I click on sign up button
-    Then I get the outcome "<Outcome>"
-    Then I get
+    Then a message "Thank you for signing up please check your mail or mobile to activate your account"
 
-    Examples:
-      | FirstName | LastName | Email                | PhoneNumber | Password | ConfirmPassword | Outcome |
-      | Kubo      | Cocu     | Kubokubo22@gmail.com | 7984506983  | L0nd0n   | L0nd0n          | passed  |
-      | kubo      | Cocu     | @gmail.om            | 7984506983  | L0nd0n   | L0nd0n          | failed  |
-      | Kubo      | Cocu     | kubokubo21@gmail.com | 7984506983  | L        | L               | failed  |
-      | !~@!      | Cocu     | kubokubo29@gmail.com | 7984506983  | L0nd0n   | L0nd0n          | failed  |
+
 
 
 

@@ -1,22 +1,26 @@
 package stepdefs;
 
 import RegistrationPage.PropPageObject;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import utilities.Hooks;
 
 public class Propstepdef {
-    WebDriver driver;
-    public PropPageObject property;
+   public WebDriver driver;
+    PropPageObject propPageObject;
+
+
+    public Propstepdef(Hooks hooks) {
+        this.driver = hooks.getDriver();
+        propPageObject = new PropPageObject(hooks);
+    }
+
     @Given("^that I’m on propertyrete homepage$")
     public void thatIMOnPropertyreteHomepage() {
-        System.setProperty("WebDriver.gecko.driver","geckodriver");
-        driver = new FirefoxDriver();
-        property = new PropPageObject(driver);
-        driver.get("http://propertyrete.com");
+
     }
 
     @When("^I click on buy$")
