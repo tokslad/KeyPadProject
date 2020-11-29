@@ -75,7 +75,7 @@ public class RegisPage {
     }
 
     public boolean IsRegistrationInfoDisplayed(String RegistrationInfo){
-        return RegistrationInfo.equals("Thankyouforsigninguppleasecheckyourmailormobiletoactivateyouraccount");
+        return registrationinfo.equals("Thankyouforsigninguppleasecheckyourmailormobiletoactivateyouraccount");
 
     }
 

@@ -13,7 +13,7 @@ public class Hooks {
         if(driver == null){
             System.setProperty("webdriver.chrome.driver", "src/test/resources/chromeDriver/chromedriver");
             driver = new ChromeDriver();
-         //   driver.get("https://propertyrete.com/");
+
         }
         return driver;
     }

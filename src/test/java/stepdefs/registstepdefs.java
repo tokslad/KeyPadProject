@@ -7,9 +7,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import utilities.Hooks;
-import static org.junit.Assert.assertTrue;
+
 
 public class registstepdefs {
    public WebDriver driver;
@@ -54,7 +53,7 @@ public class registstepdefs {
         regisPage.IEnterEmail(Email);
 
     }
-//
+
     @And("^I enter phone number \"([^\"]*)\"$")
     public void iEnterPhoneNumber(String phoneNumber){
         regisPage.IEnterPhoneNumber(phoneNumber);
@@ -78,12 +77,6 @@ public class registstepdefs {
         regisPage.IClickOnSignUp();
 
     }
-
-
-//    @Then("a message Thank you for signing up please check your mail or mobile to activate your account")
-//    public void aMessageThankYouForSigningUpPleaseCheckYourMailOrMobileToActivateYourAccount(String RegistrationInfo) {
-//        Assert.assertEquals(RegistrationInfo, "Thank you for signing up please check your mail or mobile to activate your account");
-//    }
 
 
     @Then("a message {string}")
