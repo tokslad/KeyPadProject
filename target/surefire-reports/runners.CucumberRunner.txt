@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: runners.CucumberRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.1 s <<< FAILURE! - in runners.CucumberRunner
+runners.CucumberRunner.initializationError  Time elapsed: 0.008 s  <<< ERROR!
+java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+Caused by: java.lang.ClassNotFoundException: io.cucumber.core.eventbus.EventBus
+

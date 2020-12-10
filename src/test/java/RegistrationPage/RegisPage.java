@@ -2,13 +2,15 @@ package RegistrationPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 import utilities.Hooks;
 
+import java.nio.charset.Charset;
+import java.security.SecureRandom;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
+
 
 public class RegisPage {
     public WebDriver driver;
@@ -46,16 +48,50 @@ public class RegisPage {
 
     public void IEnterFirstName(String firstName) throws InterruptedException {
         Thread.sleep(5000);
-        driver.findElement(firstname).sendKeys(firstName);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        driver.findElement(firstname).sendKeys(firstName+generateRandomString(6));
     }
 
     public void IEnterLastName(String lastName){
-        driver.findElement(lastname).sendKeys(lastName);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        driver.findElement(lastname).sendKeys(lastName+generateRandomString(5));
     }
 
+
     public void IEnterEmail(String Email){
-        driver.findElement(email).sendKeys(Email);
+        Random randomGenerator = new Random();
+        int randomInt = randomGenerator.nextInt(1000);
+        driver.findElement(email).sendKeys(Email+randomInt+"@gmail.com");
     }
+
+
+    public static String generateRandomString(int length) {
+         String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
+         String CHAR_UPPER = CHAR_LOWER.toUpperCase();
+
+
+         String DATA_FOR_RANDOM_STRING = CHAR_LOWER + CHAR_UPPER;
+         SecureRandom random = new SecureRandom();
+        if (length < 1) throw new IllegalArgumentException();
+
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+
+
+            int rndCharAt = random.nextInt(DATA_FOR_RANDOM_STRING.length());
+            char rndChar = DATA_FOR_RANDOM_STRING.charAt(rndCharAt);
+
+
+            System.out.format("%d\t:\t%c%n", rndCharAt, rndChar);
+
+            sb.append(rndChar);
+
+        }
+
+        return sb.toString();
+
+    }
+
 
     public void IEnterPhoneNumber(String phoneNumber){
         driver.findElement(phonenumber).sendKeys(phoneNumber);
